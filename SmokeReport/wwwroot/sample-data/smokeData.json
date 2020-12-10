@@ -1,0 +1,64 @@
+[
+    {
+        "Description": "Add Vehicle",
+        "ProductKinds": [
+            {
+                "LOB": "Auto",
+                "TestCaseDetails": [
+                    {
+                        "TestCaseNumber": 1437019,
+                        "Status": "Pass"
+                    },
+                    {
+                        "TestCaseNumber": 1437020,
+                        "Status": "Fail"
+                    }
+                ]
+            },
+            {
+                "LOB": "Cycle",
+                "TestCaseDetails": [
+                    {
+                        "TestCaseNumber": 1437021,
+                        "Status": "Pass"
+                    },
+                    {
+                        "TestCaseNumber": 1437022,
+                        "Status": "Fail"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Description": "Add Driver",
+        "ProductKinds": [
+            {
+                "LOB": "Auto",
+                "TestCaseDetails": [
+                    {
+                        "TestCaseNumber": 1437023,
+                        "Status": "Pass"
+                    },
+                    {
+                        "TestCaseNumber": 1437024,
+                        "Status": "Fail"
+                    }
+                ]
+            },
+            {
+                "LOB": "Cycle",
+                "TestCaseDetails": [
+                    {
+                        "TestCaseNumber": 1437025,
+                        "Status": "Pass"
+                    },
+                    {
+                        "TestCaseNumber": 1437026,
+                        "Status": "Fail"
+                    }
+                ]
+            }
+        ]
+    }
+]

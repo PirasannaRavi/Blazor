@@ -1,0 +1,107 @@
+﻿@page "/counter"
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime;
+
+@if(sets==null){
+     <p><em>Loading...</em></p>
+}
+else
+{
+<div id="dataTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>LOB</th>
+                <th>Status</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var set in sets)
+            {
+                <tr>
+                    <td style="padding:0px; border:0px;vertical-align:middle;height: 120px;">@set.Description</td>
+                    <td style="padding:0px; border:0px;vertical-align:middle;height: 120px;">
+                        <table style="height: 120px;">
+                        @foreach (var pk in set.ProductKinds)
+                        {
+                            <tr>
+                                <td style="padding:0px; border:0px;vertical-align:middle">
+                                    @pk.LOB
+                                </td>
+                            </tr>
+                        }
+                        </table>
+                    </td>
+                    <td style="padding:0px; border:0px;vertical-align:middle;height: 120px;">
+                        <table style="height: 120px">
+                            @foreach (var pk in set.ProductKinds)
+                            {
+                                @foreach (var td in pk.TestCaseDetails)
+                                {
+                                    <tr>
+                                        <td style="padding:0px; border:0px;vertical-align:middle">
+                                            <div contenteditable="true" bind-value-oninput="@td.TestCaseNumber">
+                                               @td.TestCaseNumber
+                                            </div>
+                                            @td.TestCaseNumber
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </table>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<input type="button" value="Get HTML Data" onclick="@GetData"/>
+<span>
+    @ConvertedText
+</span>
+
+<div contenteditable="true" bind-value-oninput="@editText">
+    @editText
+</div>
+@editText
+
+}
+
+@functions {
+string editText;
+private MarkupString ConvertedText;
+
+private async void GetData()
+{
+        var text = await JsRuntime.InvokeAsync<string>("getInnerHtml");
+        ConvertedText = new MarkupString(text);
+        StateHasChanged();
+}
+
+Set[] sets;
+protected override async Task OnInitAsync()
+{
+    sets = await Http.GetJsonAsync<Set[]>("sample-data/smokeData.json");
+    editText="Test";
+}
+
+public class TestCaseDetail
+{
+    public int TestCaseNumber { get; set; }
+    public string Status { get; set; }
+}
+
+public class ProductKind
+{
+    public string LOB { get; set; }
+    public List<TestCaseDetail> TestCaseDetails { get; set; }
+}
+
+public class Set
+{
+    public string Description { get; set; }
+    public List<ProductKind> ProductKinds { get; set; }
+}
+}

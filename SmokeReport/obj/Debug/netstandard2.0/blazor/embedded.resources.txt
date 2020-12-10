@@ -1,0 +1,9 @@
+/Users/Alligator/.nuget/packages/microsoft.aspnetcore.blazor/3.0.0-preview4-19216-03/lib/netstandard2.0/Microsoft.AspNetCore.Blazor.dll
+/Users/Alligator/.nuget/packages/microsoft.aspnetcore.components/3.0.0-preview4-19216-03/lib/netstandard2.0/Microsoft.AspNetCore.Components.dll
+/Users/Alligator/.nuget/packages/microsoft.aspnetcore.components.browser/3.0.0-preview4-19216-03/lib/netstandard2.0/Microsoft.AspNetCore.Components.Browser.dll
+/Users/Alligator/.nuget/packages/microsoft.extensions.dependencyinjection/3.0.0-preview4.19216.2/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/Alligator/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.0.0-preview4.19216.2/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/Alligator/.nuget/packages/microsoft.jsinterop/3.0.0-preview4.19216.2/lib/netstandard2.0/Microsoft.JSInterop.dll
+/Users/Alligator/.nuget/packages/mono.webassembly.interop/3.0.0-preview4.19216.2/lib/netstandard2.0/Mono.WebAssembly.Interop.dll
+/Users/Alligator/.nuget/packages/newtonsoft.json/12.0.2/lib/netstandard2.0/Newtonsoft.Json.dll
+/Users/Alligator/.nuget/packages/system.componentmodel.annotations/4.6.0-preview4.19212.13/lib/netstandard2.0/System.ComponentModel.Annotations.dll
